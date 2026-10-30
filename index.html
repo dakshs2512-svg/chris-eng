@@ -1,0 +1,1025 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris Emmanuel K. | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #10110f;
+  --panel: #171916;
+  --text: #f0f0e9;
+  --muted: #a0a397;
+  --lime: #d4f36a;
+  --line: rgba(240,240,233,.13);
+  --mono: "DM Mono", monospace;
+  --sans: "DM Sans", sans-serif;
+  --display: "Manrope", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav {
+  height: 78px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(16,17,15,.9);
+  backdrop-filter: blur(16px);
+}
+
+.logo {
+  font: 800 1.2rem var(--display);
+  letter-spacing: -.06em;
+}
+
+.logo span { color: var(--lime); }
+
+.navlinks {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  font-size: .85rem;
+  color: #c2c4b9;
+}
+
+.navlinks a:hover { color: var(--lime); }
+
+.nav-cta {
+  border: 1px solid var(--line);
+  padding: 9px 15px;
+  border-radius: 30px;
+}
+
+.menu {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.wrap {
+  width: min(1120px, 86%);
+  margin: auto;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 690px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 580px;
+  height: 580px;
+  border-radius: 50%;
+  right: -80px;
+  top: 30px;
+  background: radial-gradient(
+    circle,
+    rgba(212,243,106,.11),
+    transparent 68%
+  );
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.eyebrow, .kicker {
+  font: .72rem var(--mono);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid var(--line);
+  padding: 8px 13px;
+  border-radius: 30px;
+  color: #c8cabe;
+  font-size: .78rem;
+  margin-bottom: 30px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background: var(--lime);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--lime);
+}
+
+h1 {
+  font: 800 clamp(4rem,9vw,8rem)/.98 var(--display);
+  letter-spacing: -.085em;
+  margin: 20px 0 27px;
+}
+
+h1 span { color: var(--lime); }
+
+.hero-copy {
+  max-width: 650px;
+  font-size: 1.08rem;
+  color: #b7baae;
+  line-height: 1.85;
+}
+
+.actions {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.btn {
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: .85rem;
+  font-weight: 700;
+  display: inline-flex;
+  gap: 13px;
+  align-items: center;
+  transition: .2s;
+}
+
+.primary {
+  background: var(--lime);
+  color: #171a10;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px #d4f32622;
+}
+
+.secondary {
+  border: 1px solid var(--line);
+}
+
+.secondary:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+
+.hero-meta {
+  display: flex;
+  gap: 55px;
+  margin-top: 75px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  font: .7rem var(--mono);
+  color: #858a7e;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+.meta-item strong {
+  display: block;
+  font: 600 .92rem var(--sans);
+  color: #e6e8dd;
+  margin-top: 6px;
+  text-transform: none;
+}
+
+/* TICKER */
+
+.ticker {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  padding: 17px 0;
+  color: #aeb2a3;
+  font: .75rem var(--mono);
+  letter-spacing: .08em;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.ticker span {
+  color: var(--lime);
+  padding: 0 10px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 110px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-top {
+  display: flex;
+  gap: 55px;
+  margin-bottom: 48px;
+}
+
+.section-no {
+  min-width: 175px;
+  color: var(--lime);
+  font: .72rem var(--mono);
+  letter-spacing: .1em;
+  padding-top: 10px;
+}
+
+.section-content { flex: 1; }
+
+h2 {
+  font: 700 clamp(2.6rem,5vw,4.7rem)/1.05 var(--display);
+  letter-spacing: -.07em;
+  margin-bottom: 18px;
+}
+
+.section-desc {
+  color: var(--muted);
+  max-width: 650px;
+  font-size: .98rem;
+}
+
+/* ABOUT */
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.body-copy {
+  color: #b9bcb1;
+  line-height: 1.9;
+  font-size: .96rem;
+}
+
+.quote-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 32px;
+  border-radius: 13px;
+}
+
+.quote-card::before {
+  content: "“";
+  font: 5rem Georgia;
+  color: var(--lime);
+  line-height: .8;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.quote-card p {
+  font: 600 1.45rem/1.4 var(--display);
+  margin: 0;
+}
+
+.quote-card small {
+  display: block;
+  color: #8f9487;
+  font: .67rem var(--mono);
+  margin-top: 22px;
+}
+
+/* STRENGTH CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 13px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 25px;
+  min-height: 190px;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #d4f36a66;
+  background: #1b1f17;
+}
+
+.card-icon {
+  font-size: 1.35rem;
+  color: var(--lime);
+}
+
+.card h3 {
+  font: 650 1.18rem var(--display);
+  margin: 17px 0 9px;
+}
+
+.card p {
+  font-size: .84rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* TWO COLUMN PANELS */
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.feature {
+  padding: 32px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.feature .kicker { margin-bottom: 22px; }
+
+.feature h3 {
+  font: 650 1.55rem var(--display);
+  margin-bottom: 12px;
+}
+
+.feature p {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* APPROACH */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 14px;
+}
+
+.step {
+  padding: 26px 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.step-no {
+  font: .7rem var(--mono);
+  color: var(--lime);
+}
+
+.step h3 {
+  font: 650 1.3rem var(--display);
+  margin: 26px 0 10px;
+}
+
+.step p {
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+/* TAGS */
+
+.toolkit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.pill {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 8px 13px;
+  color: #c4c7ba;
+  font-size: .78rem;
+}
+
+/* CONTACT */
+
+.contact {
+  padding: 125px 0 105px;
+  text-align: center;
+}
+
+.contact h2 {
+  margin: 18px auto;
+  max-width: 780px;
+}
+
+.contact p {
+  max-width: 570px;
+  margin: auto;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.contact .actions { justify-content: center; }
+
+.email-note {
+  font: .72rem var(--mono);
+  color: #8e9386;
+  margin-top: 30px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 25px 7%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  color: #818679;
+  font-size: .75rem;
+}
+
+/* SCROLL ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:760px) {
+
+  .nav { height: 68px; }
+
+  .menu { display: block; }
+
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: 67px;
+    left: 0;
+    right: 0;
+    padding: 20px 7%;
+    background: #151713;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navlinks.open { display: flex; }
+
+  .hero { min-height: 650px; }
+
+  .hero-meta { gap: 25px; }
+
+  .section-top {
+    display: block;
+  }
+
+  .section-no { margin-bottom: 22px; }
+
+  .intro-grid, .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .cards, .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section { padding: 80px 0; }
+}
+
+@media(max-width:480px) {
+
+  h1 { font-size: 4rem; }
+
+  .cards, .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer { display: block; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav class="nav">
+  <a class="logo" href="#home">CEK<span>.</span></a>
+
+  <button class="menu" aria-label="Toggle navigation"
+  onclick="document.querySelector('.navlinks').classList.toggle('open')">
+  ☰
+  </button>
+
+  <div class="navlinks">
+    <a href="#interests">Interests</a>
+    <a href="#about">About</a>
+    <a href="#approach">Approach</a>
+    <a href="#english">English</a>
+    <a class="nav-cta" href="#contact">Explore ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero" id="home">
+  <div class="wrap hero-inner">
+
+    <div class="status">
+      <span class="dot"></span>
+      Student · Always learning
+    </div>
+
+    <div class="eyebrow">
+      A curious mind · A growing journey
+    </div>
+
+    <h1>
+      Learning with<br>
+      <span>purpose.</span>
+    </h1>
+
+    <p class="hero-copy">
+      I'm Chris Emmanuel K. — a Computer Science and Engineering
+      student who enjoys exploring new ideas, building skills,
+      and discovering the space where technology, creativity,
+      and personal growth meet.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="#interests">
+        Explore my portfolio ↘
+      </a>
+
+      <a class="btn secondary" href="#about">
+        A little about me
+      </a>
+    </div>
+
+    <div class="hero-meta">
+      <div class="meta-item">
+        Curious by nature
+        <strong>Always exploring</strong>
+      </div>
+
+      <div class="meta-item">
+        Focused on
+        <strong>Learning & growth</strong>
+      </div>
+
+      <div class="meta-item">
+        Field of study
+        <strong>Computer Science</strong>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<div class="ticker">
+  LEARN <span>✳</span>
+  CREATE <span>✳</span>
+  COLLABORATE <span>✳</span>
+  GROW <span>✳</span>
+  LEARN <span>✳</span>
+  CREATE <span>✳</span>
+  COLLABORATE <span>✳</span>
+  GROW
+</div>
+
+<main>
+
+<!-- SECTION 1 -->
+
+<section id="interests">
+<div class="wrap">
+
+  <div class="section-top reveal">
+    <div class="section-no">01 / WHAT SHAPES ME</div>
+
+    <div class="section-content">
+      <h2>A few things I<br>believe in.</h2>
+
+      <p class="section-desc">
+        The values and interests that influence how I learn,
+        work with others, and take on new challenges.
+      </p>
+    </div>
+  </div>
+
+  <div class="cards">
+
+    <article class="card reveal">
+      <div class="card-icon">✳</div>
+      <h3>Stay curious</h3>
+      <p>
+        Ask questions, explore unfamiliar subjects, and stay
+        open to ideas that challenge the usual way of thinking.
+      </p>
+    </article>
+
+    <article class="card reveal">
+      <div class="card-icon">↗</div>
+      <h3>Keep improving</h3>
+      <p>
+        Treat every task and experience as a chance to learn
+        something useful and become more capable.
+      </p>
+    </article>
+
+    <article class="card reveal">
+      <div class="card-icon">◎</div>
+      <h3>Work together</h3>
+      <p>
+        Listen to different perspectives, share ideas, and
+        contribute positively towards a common goal.
+      </p>
+    </article>
+
+    <article class="card reveal">
+      <div class="card-icon">◇</div>
+      <h3>Think creatively</h3>
+      <p>
+        Look at problems from different angles and find
+        fresh ways to approach an idea or challenge.
+      </p>
+    </article>
+
+    <article class="card reveal">
+      <div class="card-icon">◷</div>
+      <h3>Be consistent</h3>
+      <p>
+        Make steady progress through discipline,
+        thoughtful planning, and responsible use of time.
+      </p>
+    </article>
+
+    <article class="card reveal">
+      <div class="card-icon">⌁</div>
+      <h3>Stay adaptable</h3>
+      <p>
+        Welcome change, adjust to new environments, and
+        approach unfamiliar situations with confidence.
+      </p>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- SECTION 2 -->
+
+<section id="about">
+<div class="wrap">
+
+  <div class="section-top reveal">
+    <div class="section-no">02 / ABOUT ME</div>
+
+    <div class="section-content">
+      <h2>Grounded in curiosity.<br>Driven by growth.</h2>
+
+      <p class="section-desc">
+        A little about my outlook, interests, and the person
+        I'm working towards becoming.
+      </p>
+    </div>
+  </div>
+
+  <div class="intro-grid">
+
+    <div class="body-copy reveal">
+      <p>
+        My name is Chris Emmanuel K. I am a passionate,
+        curious, and enthusiastic individual who believes
+        in continuous learning and personal growth.
+        I enjoy exploring new ideas, developing my skills,
+        and taking on challenges that help me become
+        a better version of myself.
+      </p>
+
+      <p>
+        I consider myself a determined person who values
+        creativity, teamwork, and discipline. I believe
+        that every experience, whether successful or
+        challenging, provides an opportunity to learn
+        something meaningful.
+      </p>
+
+      <p>
+        Outside academics, I enjoy technology, music,
+        movies, discovering new things, and spending
+        quality time with friends.
+      </p>
+    </div>
+
+    <aside class="quote-card reveal">
+      <p>
+        Every experience — big or small — has something
+        meaningful to teach.
+      </p>
+
+      <small>
+        CHRIS EMMANUEL K. · PERSONAL PHILOSOPHY
+      </small>
+    </aside>
+
+  </div>
+</div>
+</section>
+
+<!-- SECTION 3 -->
+
+<section id="approach">
+<div class="wrap">
+
+  <div class="section-top reveal">
+    <div class="section-no">03 / PERSONAL GROWTH</div>
+
+    <div class="section-content">
+      <h2>Learn. Explore.<br>Make it count.</h2>
+
+      <p class="section-desc">
+        Good progress comes from curiosity, effort,
+        and the willingness to keep refining what you do.
+      </p>
+    </div>
+  </div>
+
+  <div class="steps">
+
+    <article class="step reveal">
+      <div class="step-no">01 — DISCOVER</div>
+      <h3>Start with curiosity.</h3>
+      <p>
+        Ask questions, understand the basics, and look
+        for the ideas that make a subject worth exploring.
+      </p>
+    </article>
+
+    <article class="step reveal">
+      <div class="step-no">02 — EXPLORE</div>
+      <h3>Learn by doing.</h3>
+      <p>
+        Try new approaches, collaborate with others,
+        and turn concepts into practical experience.
+      </p>
+    </article>
+
+    <article class="step reveal">
+      <div class="step-no">03 — IMPROVE</div>
+      <h3>Keep moving forward.</h3>
+      <p>
+        Reflect on what worked, learn from mistakes,
+        and make each new attempt a little better.
+      </p>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- SECTION 4 -->
+
+<section id="english">
+<div class="wrap">
+
+  <div class="section-top reveal">
+    <div class="section-no">04 / ENGLISH & COMMUNICATION</div>
+
+    <div class="section-content">
+      <h2>Words create<br>connections.</h2>
+
+      <p class="section-desc">
+        Why English and communication matter in my
+        academic and professional journey.
+      </p>
+    </div>
+  </div>
+
+  <div class="two-col">
+
+    <article class="feature reveal">
+      <div class="kicker">WHY IT MATTERS</div>
+
+      <h3>More than a language.</h3>
+
+      <p>
+        I believe English is an important tool for
+        communication, education, and professional
+        development. It helps me express my thoughts
+        confidently, interact with people from different
+        backgrounds, and present ideas effectively.
+      </p>
+    </article>
+
+    <article class="feature reveal">
+      <div class="kicker">WHAT I WANT TO BUILD</div>
+
+      <h3>A stronger voice.</h3>
+
+      <p>
+        Through this subject, I aim to improve my
+        vocabulary, grammar, writing, public speaking,
+        and interpersonal communication skills.
+        These abilities are valuable in every field.
+      </p>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- SECTION 5 -->
+
+<section id="goals">
+<div class="wrap">
+
+  <div class="section-top reveal">
+    <div class="section-no">05 / FUTURE ASPIRATIONS</div>
+
+    <div class="section-content">
+      <h2>Building a future<br>with intention.</h2>
+
+      <p class="section-desc">
+        My goal is to combine knowledge, practical ability,
+        and strong communication to make a meaningful contribution.
+      </p>
+    </div>
+  </div>
+
+  <div class="two-col">
+
+    <article class="feature reveal">
+      <div class="kicker">ACADEMIC DIRECTION</div>
+
+      <h3>Technology with purpose.</h3>
+
+      <p>
+        As a Computer Science and Engineering student,
+        I want to develop strong technical knowledge
+        and practical skills, explore different areas
+        of technology, and work on projects with
+        real-world applications.
+      </p>
+    </article>
+
+    <article class="feature reveal">
+      <div class="kicker">LONG-TERM GOALS</div>
+
+      <h3>Keep becoming better.</h3>
+
+      <p>
+        My long-term aspiration is to become a skilled
+        professional who combines technical knowledge
+        with creativity, contributes positively to society,
+        and never stops learning.
+      </p>
+    </article>
+
+  </div>
+
+  <div class="toolkit reveal">
+    <span class="pill">Technical learning</span>
+    <span class="pill">Creative thinking</span>
+    <span class="pill">Teamwork</span>
+    <span class="pill">Communication</span>
+    <span class="pill">Problem solving</span>
+    <span class="pill">Lifelong learning</span>
+  </div>
+
+</div>
+</section>
+
+<!-- CONCLUSION -->
+
+<section id="contact" class="contact">
+<div class="wrap reveal">
+
+  <div class="eyebrow">06 / CONCLUSION</div>
+
+  <h2>
+    The journey is just as important as the destination.
+  </h2>
+
+  <p>
+    This portfolio reflects my interests, strengths,
+    goals, and willingness to improve. I look forward
+    to making the most of every opportunity, learning
+    from every experience, and growing into a confident,
+    knowledgeable, and responsible individual.
+  </p>
+
+  <div class="actions">
+    <a class="btn primary" href="#home">
+      Back to the beginning ↑
+    </a>
+  </div>
+
+  <div class="email-note">
+    THANK YOU FOR TAKING THE TIME TO EXPLORE MY PORTFOLIO.
+  </div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+  <span>© 2026 Chris Emmanuel K.</span>
+  <span>Made with curiosity ✳ · English Portfolio</span>
+  <a href="#home">Back to top ↑</a>
+</footer>
+
+<script>
+/* Scroll reveal animation */
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
+
+/* Mobile navigation */
+
+document.querySelectorAll(".navlinks a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector(".navlinks").classList.remove("open");
+  });
+});
+</script>
+
+</body>
+</html>
